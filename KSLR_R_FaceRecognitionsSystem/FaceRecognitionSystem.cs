@@ -88,12 +88,64 @@ namespace KSLR_R_FaceRecognitionsSystem
 
         void SesimiTaniyarsa()
         {
-            string[] komandalar = { "Kamera ac", "Saxla", "Baza ac" };
+            string[] komandalar = { "Kamera ac"};
             Choices secimler = new Choices(komandalar);
             Grammar grammar = new Grammar(new GrammarBuilder(secimler));
             reco.LoadGrammar(grammar);
             reco.SetInputToDefaultAudioDevice();
             reco.SpeechRecognized += SesimiTanidi;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txName.Text == "" || txName.Text.Length < 2 || txName.Text == string.Empty)
+            {
+                cumle.SpeakAsync("Please enter name of person");
+            }
+            else
+            {
+                Count += 1;
+                grayFace = camera.QueryGrayFrame().Resize(320, 240, INTER.CV_INTER_CUBIC);
+                MCvAvgComp[][] DetectedFace = grayFace.DetectHaarCascade(faceDetected, 1.2, 10,
+                    HAAR_DETECTION_TYPE.DO_CANNY_PRUNING, new Size(20, 20));
+
+                foreach (MCvAvgComp f in DetectedFace[0])
+                {
+
+                    TrainedFace = Frame.Copy(f.rect).Convert<Gray, Byte>();
+                    break;
+                }
+
+                TrainedFace = result.Resize(100, 100, INTER.CV_INTER_CUBIC);
+
+                trainingImages.Add(TrainedFace);
+                IBOutput.Image = TrainedFace;
+
+                labels.Add(txName.Text);
+
+                File.WriteAllText(Application.StartupPath + "/Faces/Faces.txt", trainingImages.ToArray().Length.ToString() + ",");
+
+                for (int i = 1; i < trainingImages.ToArray().Length + 1; i++)
+                {
+                    trainingImages.ToArray()[i - 1].Save(Application.StartupPath + "/Faces/face" + i + ".bmp");
+                    File.AppendAllText(Application.StartupPath + "/Faces/Faces.txt", labels.ToArray()[i - 1] + ",");
+                }
+
+                cumle.SpeakAsync("Face Stored");
+                txName.Text = "";
+                txName.Focus();
+            }
+        }
+
+        private void btnDatabase_Click(object sender, EventArgs e)
+        {
+            cumle.SpeakAsync("Database is opening");
+            Process.Start(new ProcessStartInfo()
+            {
+                FileName = Application.StartupPath + "/Faces/",
+                UseShellExecute = true,
+                Verb = "open"
+            });
         }
 
         private void SesimiTanidi(object sender, SpeechRecognizedEventArgs e)
@@ -109,55 +161,9 @@ namespace KSLR_R_FaceRecognitionsSystem
 
                 txName.Focus();
             }
-            else if (e.Result.Text == "Saxla")
+            else
             {
-                if (txName.Text == "" || txName.Text.Length < 2 || txName.Text == string.Empty)
-                {
-                    cumle.SpeakAsync("Please enter name of person");
-                }
-                else
-                {
-                    Count += 1;
-                    grayFace = camera.QueryGrayFrame().Resize(320, 240, INTER.CV_INTER_CUBIC);
-                    MCvAvgComp[][] DetectedFace = grayFace.DetectHaarCascade(faceDetected, 1.2, 10,
-                        HAAR_DETECTION_TYPE.DO_CANNY_PRUNING, new Size(20, 20));
-
-                    foreach (MCvAvgComp f in DetectedFace[0])
-                    {
-
-                        TrainedFace = Frame.Copy(f.rect).Convert<Gray, Byte>();
-                        break;
-                    }
-
-                    TrainedFace = result.Resize(100, 100, INTER.CV_INTER_CUBIC);
-
-                    trainingImages.Add(TrainedFace);
-                    IBOutput.Image = TrainedFace;
-
-                    labels.Add(txName.Text);
-
-                    File.WriteAllText(Application.StartupPath + "/Faces/Faces.txt", trainingImages.ToArray().Length.ToString() + ",");
-
-                    for (int i = 1; i < trainingImages.ToArray().Length + 1; i++)
-                    {
-                        trainingImages.ToArray()[i - 1].Save(Application.StartupPath + "/Faces/face" + i + ".bmp");
-                        File.AppendAllText(Application.StartupPath + "/Faces/Faces.txt", labels.ToArray()[i - 1] + ",");
-                    }
-
-                    cumle.SpeakAsync("Face Stored");
-                    txName.Text = "";
-                    txName.Focus();
-                }
-            }
-            else if (e.Result.Text == "Baza ac")
-            {
-                cumle.SpeakAsync("Database is opening");
-                Process.Start(new ProcessStartInfo()
-                {
-                    FileName = Application.StartupPath + "/Faces/",
-                    UseShellExecute = true,
-                    Verb = "open"
-                });
+                cumle.SpeakAsync("I dont understand");
             }
         }
 
