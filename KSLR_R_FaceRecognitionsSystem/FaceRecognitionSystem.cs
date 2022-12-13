@@ -148,6 +148,17 @@ namespace KSLR_R_FaceRecognitionsSystem
             });
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cumle.SpeakAsync("Camera is opening");
+            camera = new Capture();
+            camera.QueryFrame();
+
+            Application.Idle += new EventHandler(FrameProcedure);
+
+            txName.Focus();
+        }
+
         private void SesimiTanidi(object sender, SpeechRecognizedEventArgs e)
         {
             mic1.Visible = true;
@@ -160,10 +171,6 @@ namespace KSLR_R_FaceRecognitionsSystem
                 Application.Idle += new EventHandler(FrameProcedure);
 
                 txName.Focus();
-            }
-            else
-            {
-                cumle.SpeakAsync("I dont understand");
             }
         }
 

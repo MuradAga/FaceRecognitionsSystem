@@ -44,6 +44,7 @@
             this.mic2 = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDatabase = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cameraBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IBOutput)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -55,9 +56,10 @@
             // 
             this.cameraBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.cameraBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cameraBox.Location = new System.Drawing.Point(11, 10);
+            this.cameraBox.Location = new System.Drawing.Point(15, 12);
+            this.cameraBox.Margin = new System.Windows.Forms.Padding(4);
             this.cameraBox.Name = "cameraBox";
-            this.cameraBox.Size = new System.Drawing.Size(324, 247);
+            this.cameraBox.Size = new System.Drawing.Size(431, 304);
             this.cameraBox.TabIndex = 2;
             this.cameraBox.TabStop = false;
             // 
@@ -65,27 +67,30 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 271);
+            this.label1.Location = new System.Drawing.Point(13, 334);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 24);
+            this.label1.Size = new System.Drawing.Size(126, 30);
             this.label1.TabIndex = 5;
             this.label1.Text = "Şəxsin Adı";
             // 
             // txName
             // 
             this.txName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txName.Location = new System.Drawing.Point(14, 299);
+            this.txName.Location = new System.Drawing.Point(19, 368);
+            this.txName.Margin = new System.Windows.Forms.Padding(4);
             this.txName.Name = "txName";
-            this.txName.Size = new System.Drawing.Size(218, 38);
+            this.txName.Size = new System.Drawing.Size(289, 45);
             this.txName.TabIndex = 6;
             // 
             // IBOutput
             // 
             this.IBOutput.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.IBOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IBOutput.Location = new System.Drawing.Point(6, 141);
+            this.IBOutput.Location = new System.Drawing.Point(8, 174);
+            this.IBOutput.Margin = new System.Windows.Forms.Padding(4);
             this.IBOutput.Name = "IBOutput";
-            this.IBOutput.Size = new System.Drawing.Size(103, 104);
+            this.IBOutput.Size = new System.Drawing.Size(137, 128);
             this.IBOutput.TabIndex = 11;
             this.IBOutput.TabStop = false;
             // 
@@ -97,9 +102,11 @@
             this.groupBox2.Controls.Add(this.lblName);
             this.groupBox2.Controls.Add(this.lblCountAllFaces);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(357, 11);
+            this.groupBox2.Location = new System.Drawing.Point(476, 14);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(177, 252);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(236, 310);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nəticə:";
@@ -108,9 +115,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 119);
+            this.label3.Location = new System.Drawing.Point(5, 146);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(85, 21);
             this.label3.TabIndex = 18;
             this.label3.Text = "Üzün şəkli";
             // 
@@ -119,9 +127,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(4, 12);
+            this.label5.Location = new System.Drawing.Point(5, 15);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 18);
+            this.label5.Size = new System.Drawing.Size(192, 22);
             this.label5.TabIndex = 17;
             this.label5.Text = "Kamerada olan şəxslər:";
             // 
@@ -130,9 +139,10 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.Blue;
-            this.lblName.Location = new System.Drawing.Point(4, 32);
+            this.lblName.Location = new System.Drawing.Point(5, 39);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(66, 19);
+            this.lblName.Size = new System.Drawing.Size(82, 24);
             this.lblName.TabIndex = 16;
             this.lblName.Text = "Heç kim";
             // 
@@ -141,9 +151,10 @@
             this.lblCountAllFaces.AutoSize = true;
             this.lblCountAllFaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountAllFaces.ForeColor = System.Drawing.Color.Red;
-            this.lblCountAllFaces.Location = new System.Drawing.Point(150, 94);
+            this.lblCountAllFaces.Location = new System.Drawing.Point(212, 116);
+            this.lblCountAllFaces.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCountAllFaces.Name = "lblCountAllFaces";
-            this.lblCountAllFaces.Size = new System.Drawing.Size(19, 20);
+            this.lblCountAllFaces.Size = new System.Drawing.Size(24, 25);
             this.lblCountAllFaces.TabIndex = 15;
             this.lblCountAllFaces.Text = "0";
             // 
@@ -151,21 +162,22 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1, 94);
+            this.label2.Location = new System.Drawing.Point(1, 116);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 18);
+            this.label2.Size = new System.Drawing.Size(222, 22);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Aşkarlanan üzlərin sayı :";
+            this.label2.Text = "Aşkarlanan şəxslərin sayı: :";
             // 
             // mic1
             // 
             this.mic1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.mic1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mic1.Image = ((System.Drawing.Image)(resources.GetObject("mic1.Image")));
-            this.mic1.Location = new System.Drawing.Point(641, 11);
-            this.mic1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mic1.Location = new System.Drawing.Point(855, 14);
+            this.mic1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mic1.Name = "mic1";
-            this.mic1.Size = new System.Drawing.Size(67, 72);
+            this.mic1.Size = new System.Drawing.Size(89, 89);
             this.mic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mic1.TabIndex = 13;
             this.mic1.TabStop = false;
@@ -175,10 +187,10 @@
             // 
             this.mic2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mic2.Image = ((System.Drawing.Image)(resources.GetObject("mic2.Image")));
-            this.mic2.Location = new System.Drawing.Point(641, 11);
-            this.mic2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mic2.Location = new System.Drawing.Point(855, 14);
+            this.mic2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mic2.Name = "mic2";
-            this.mic2.Size = new System.Drawing.Size(67, 72);
+            this.mic2.Size = new System.Drawing.Size(89, 89);
             this.mic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mic2.TabIndex = 14;
             this.mic2.TabStop = false;
@@ -189,10 +201,11 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSave.Location = new System.Drawing.Point(253, 297);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(337, 368);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(82, 39);
+            this.btnSave.Size = new System.Drawing.Size(109, 45);
             this.btnSave.TabIndex = 19;
             this.btnSave.Text = "Yadda saxla";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -203,21 +216,38 @@
             this.btnDatabase.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnDatabase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDatabase.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDatabase.Location = new System.Drawing.Point(658, 297);
-            this.btnDatabase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDatabase.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatabase.Location = new System.Drawing.Point(877, 368);
+            this.btnDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDatabase.Name = "btnDatabase";
-            this.btnDatabase.Size = new System.Drawing.Size(50, 45);
+            this.btnDatabase.Size = new System.Drawing.Size(67, 45);
             this.btnDatabase.TabIndex = 20;
             this.btnDatabase.Text = "BAZA";
             this.btnDatabase.UseVisualStyleBackColor = false;
             this.btnDatabase.Click += new System.EventHandler(this.btnDatabase_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(826, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 21);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "K";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FaceRecognitionSystem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(717, 353);
+            this.ClientSize = new System.Drawing.Size(956, 420);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDatabase);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.mic1);
@@ -228,6 +258,7 @@
             this.Controls.Add(this.mic2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FaceRecognitionSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Üz tanıma sistemi";
@@ -258,6 +289,7 @@
         private System.Windows.Forms.PictureBox mic2;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDatabase;
+        private System.Windows.Forms.Button button1;
     }
 }
 
